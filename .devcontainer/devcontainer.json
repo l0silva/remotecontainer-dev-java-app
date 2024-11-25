@@ -1,0 +1,35 @@
+{
+    "name": "Java Dev Container",
+    "context": "../app",
+    "dockerFile": "../app/Dockerfile",
+    "runArgs": ["--network=host"],
+    "appPort": [
+        8080
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "java.home": "/usr/lib/jvm/java-17-amazon-corretto",
+        "java.configuration.runtimes": [
+            {
+                "name": "JavaSE-17",
+                "path": "/usr/lib/jvm/java-17-amazon-corretto"
+            }
+        ]
+    },
+    "extensions": [
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "ms-azuretools.vscode-docker",
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-spring-initializr",
+        "vmware.vscode-boot-dev-pack",
+        "vmware.vscode-spring-boot",
+        "vscjava.vscode-lombok",
+        "vscjava.vscode-java-test",
+        "joyous-coder.springboot-extension-pack",
+        "georgewfraser.vscode-javac"
+    ],
+    "workspaceFolder": "/workspace",
+    "postCreateCommand": "mvn clean install",
+    "remoteUser": "root"
+}
